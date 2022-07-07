@@ -1,8 +1,7 @@
 import java.util.UUID;
 
 public class SalarioService {
-  private final CalculadorSalarioService calculador =
-      CalculadorSalarioService.getCalculadorSalarioService();
+  private  CalculadorSalarioService calculador = CalculadorSalarioService.getCalculadorSalarioService();
 
   public Double calcular(
       double salarioBruto, double valorDescontos, double valorVendas, double percentualComissao) {
