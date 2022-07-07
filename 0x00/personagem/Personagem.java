@@ -1,3 +1,5 @@
+import java.util.Locale;
+
 public abstract class Personagem {
   private String nome;
   private TipoPersonagem tipo;
@@ -51,7 +53,15 @@ public abstract class Personagem {
   @Override
   public String toString() {
     return String.format(
+        Locale.GERMANY,
         "Personagem{nome = %s tipo = %s inteligencia = %d forca = %d vigor = %d resistencia = %d destreza = %d dano ataque = %.2f }",
-        nome, tipo, inteligencia, forca, vigor, resistencia, destreza, getDanoAtaque());
+        nome,
+        tipo,
+        inteligencia,
+        forca,
+        vigor,
+        resistencia,
+        destreza,
+        getDanoAtaque());
   }
 }
