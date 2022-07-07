@@ -1,7 +1,7 @@
 import java.util.List;
 
 public class BebidaDecorator extends Bebida {
-private Bebida bebidaDecorada;
+Bebida bebidaDecorada;
 
   public BebidaDecorator(Bebida bebidaDecorada) {
     this.bebidaDecorada = bebidaDecorada;
