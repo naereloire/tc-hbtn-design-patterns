@@ -1,10 +1,10 @@
 import java.util.List;
 
 public class BebidaDecorator extends Bebida {
-Bebida bebidaDecorada;
+  private final Bebida bebidaDecorada;
 
-  public BebidaDecorator(Bebida bebidaDecorada) {
-    this.bebidaDecorada = bebidaDecorada;
+  public BebidaDecorator(Bebida bebida) {
+    this.bebidaDecorada = bebida;
   }
 
   @Override
