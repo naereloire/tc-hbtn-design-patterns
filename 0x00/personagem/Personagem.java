@@ -1,22 +1,25 @@
 public abstract class Personagem {
   private String nome;
   private TipoPersonagem tipo;
-  private Integer forca;
-  private Integer vigor;
-  private Integer resistencia;
-  private Integer destreza;
+  private int inteligencia;
+  private int forca;
+  private int vigor;
+  private int resistencia;
+  private int destreza;
 
   protected Personagem() {}
 
   protected Personagem(
       String nome,
       TipoPersonagem tipo,
-      Integer forca,
-      Integer vigor,
-      Integer resistencia,
-      Integer destreza) {
+      int inteligencia,
+      int forca,
+      int vigor,
+      int resistencia,
+      int destreza) {
     this.nome = nome;
     this.tipo = tipo;
+    this.inteligencia = inteligencia;
     this.forca = forca;
     this.vigor = vigor;
     this.resistencia = resistencia;
@@ -29,54 +32,34 @@ public abstract class Personagem {
     return nome;
   }
 
-  public void setNome(String nome) {
-    this.nome = nome;
-  }
-
   public TipoPersonagem getTipo() {
     return tipo;
   }
 
-  public void setTipo(TipoPersonagem tipo) {
-    this.tipo = tipo;
+  public int getInteligencia() {
+    return inteligencia;
   }
 
-  public Integer getForca() {
+  public int getForca() {
     return forca;
   }
 
-  public void setForca(Integer forca) {
-    this.forca = forca;
-  }
-
-  public Integer getVigor() {
+  public int getVigor() {
     return vigor;
   }
 
-  public void setVigor(Integer vigor) {
-    this.vigor = vigor;
-  }
-
-  public Integer getResistencia() {
+  public int getResistencia() {
     return resistencia;
   }
 
-  public void setResistencia(Integer resistencia) {
-    this.resistencia = resistencia;
-  }
-
-  public Integer getDestreza() {
+  public int getDestreza() {
     return destreza;
-  }
-
-  public void setDestreza(Integer destreza) {
-    this.destreza = destreza;
   }
 
   @Override
   public String toString() {
     return String.format(
-        "Personagem{nome = %s tipo = %s, forca = %f, vigor = %f, resistencia = %f, destreza = %f }",
-        nome, tipo, forca, vigor, resistencia, destreza);
+        "Personagem{nome = %s vigor = %d resistencia = %d destreza = %d dano ataque = %.2f }",
+        getNome(), vigor, resistencia, destreza, getDanoAtaque());
   }
 }
