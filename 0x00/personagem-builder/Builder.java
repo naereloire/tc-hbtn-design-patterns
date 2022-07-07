@@ -1,8 +1,6 @@
 public interface Builder {
   void setNome(String nome);
 
-  void setTipo(String tipo);
-
   void setInteligencia(int inteligencia);
 
   void setForca(int forca);
