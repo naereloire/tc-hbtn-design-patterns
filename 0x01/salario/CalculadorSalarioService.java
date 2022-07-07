@@ -9,7 +9,7 @@ public class CalculadorSalarioService {
 
   public static CalculadorSalarioService getCalculadorSalarioService() {
     if (instancia == null) {
-      return new CalculadorSalarioService();
+      instancia = new CalculadorSalarioService();
     }
     return instancia;
   }
