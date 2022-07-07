@@ -7,7 +7,7 @@ public class Guerreiro extends Personagem {
   }
 
   @Override
-  double getDanoAtaque() {
+  public double getDanoAtaque() {
     return (this.getForca() * 0.8)
         + (this.getVigor() * 0.05)
         + (this.getDestreza() * 0.1)

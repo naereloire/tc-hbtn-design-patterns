@@ -1,6 +1,6 @@
 public class TerraMediaPersonagemFactory extends PersonagemFactory {
   @Override
-  Personagem createPersonagem(TipoPersonagem tipoPersonagem, String nome) {
+  public Personagem createPersonagem(TipoPersonagem tipoPersonagem, String nome) {
     switch (tipoPersonagem) {
       case MAGO:
         return new Mago(nome, 10, 2, 5, 3, 4);
