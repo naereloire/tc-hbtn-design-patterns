@@ -1,12 +1,12 @@
 public class Impressao {
-  int paginasTotais;
-  int paginasColoridas;
-  boolean ehFrenteVerso;
-  double valorColoridasFrenteVerso;
-  double valorPretoBrancoFrenteVerso;
-  double valorColoridasFrenteApenas;
-  double valorPretoBrancoFrenteApenas;
   TamanhoImpressao tamanhoImpressao;
+  private final int paginasTotais;
+  private final int paginasColoridas;
+  private final boolean ehFrenteVerso;
+  private double valorColoridasFrenteVerso;
+  private double valorPretoBrancoFrenteVerso;
+  private double valorColoridasFrenteApenas;
+  private double valorPretoBrancoFrenteApenas;
 
   public Impressao(
       TamanhoImpressao tamanhoImpressao,
