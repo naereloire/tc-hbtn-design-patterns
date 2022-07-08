@@ -24,16 +24,16 @@ public class Pedido {
 
   @Override
   public String toString() {
-    String itemForaCx = "";
-    String itemDentroCx = "";
+    StringBuilder itemForaCx = new StringBuilder();
+    StringBuilder itemDentroCx = new StringBuilder();
     for (ItemPedido element : this.itensForaCaixa) {
-      itemForaCx += String.format("- %s %s%n", element.tipo, element.nome);
+      itemForaCx.append(String.format("- %s %s%n", element.getTipo().name(), element.getNome()));
     }
     for (ItemPedido e : this.itensDentroCaixa) {
-      itemDentroCx += String.format("- %s %s%n", e.tipo, e.nome);
+      itemDentroCx.append(String.format("- %s %s%n", e.getTipo().name(), e.getNome()));
     }
 
-    return String.format("Fora da Caixa: %n %sDentro da Caixa: %n %s", itemForaCx, itemDentroCx);
+    return String.format("Fora da Caixa: %n %sDentro da Caixa: %n %s", itemForaCx.toString(), itemDentroCx.toString());
   }
 
   public HashSet<ItemPedido> getItensDentroCaixa() {
