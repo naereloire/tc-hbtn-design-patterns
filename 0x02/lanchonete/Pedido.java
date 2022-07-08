@@ -29,6 +29,6 @@ public class Pedido {
       itemDentroCx.append(String.format("\t\t- %s %s%n", e.getTipo().name(), e.getNome()));
     }
 
-    return String.format("Fora da Caixa:%n%sDentro da Caixa:%n%s", itemForaCx, itemDentroCx);
+    return String.format("\tFora da Caixa:%n%s\tDentro da Caixa:%n%s", itemForaCx, itemDentroCx);
   }
 }
