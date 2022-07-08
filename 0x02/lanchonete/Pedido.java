@@ -1,8 +1,8 @@
 import java.util.HashSet;
 
 public class Pedido {
-  private final HashSet<ItemPedido> itensDentroCaixa;
-  private final HashSet<ItemPedido> itensForaCaixa;
+  private  HashSet<ItemPedido> itensDentroCaixa;
+  private  HashSet<ItemPedido> itensForaCaixa;
 
   public Pedido() {
     this.itensDentroCaixa = new HashSet<ItemPedido>();
