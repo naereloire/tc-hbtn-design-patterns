@@ -9,11 +9,6 @@ public class Pedido {
     this.itensForaCaixa = new HashSet<ItemPedido>();
   }
 
-//  public Pedido(HashSet<ItemPedido> itensDentroCaixa, HashSet<ItemPedido> itensForaCaixa) {
-//    this.itensDentroCaixa = itensDentroCaixa;
-//    this.itensForaCaixa = itensForaCaixa;
-//  }
-
   public void adicionarItemDentroCaixa(ItemPedido item) {
     this.itensDentroCaixa.add(item);
   }
