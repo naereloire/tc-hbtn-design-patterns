@@ -28,6 +28,6 @@ public class Pedido {
       itemDentroCx.append(String.format("        - %s %s%n", e.getTipo().name(), e.getNome()));
     }
 
-    return String.format("     Fora da Caixa:%n%s     Dentro da Caixa:%n  %s", itemForaCx, itemDentroCx);
+    return String.format("Fora da Caixa:%n%sDentro da Caixa:%n%s", itemForaCx, itemDentroCx);
   }
 }
