@@ -22,10 +22,10 @@ public class Pedido {
     StringBuilder itemForaCx = new StringBuilder();
     StringBuilder itemDentroCx = new StringBuilder();
     for (ItemPedido element : this.itensForaCaixa) {
-      itemForaCx.append(String.format("  - %s %s%n", element.getTipo().name(), element.getNome()));
+      itemForaCx.append(String.format("   - %s %s%n", element.getTipo().name(), element.getNome()));
     }
     for (ItemPedido e : this.itensDentroCaixa) {
-      itemDentroCx.append(String.format("  - %s %s%n", e.getTipo().name(), e.getNome()));
+      itemDentroCx.append(String.format("   - %s %s%n", e.getTipo().name(), e.getNome()));
     }
 
     return String.format("Fora da Caixa:%n%sDentro da Caixa:%n%s", itemForaCx, itemDentroCx);
