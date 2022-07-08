@@ -25,9 +25,9 @@ public class Pedido {
       itemForaCx.append(String.format("        - %s %s%n", element.getTipo().name(), element.getNome()));
     }
     for (ItemPedido e : this.itensDentroCaixa) {
-      itemDentroCx.append(String.format("      - %s %s%n", e.getTipo().name(), e.getNome()));
+      itemDentroCx.append(String.format("        - %s %s%n", e.getTipo().name(), e.getNome()));
     }
 
-    return String.format("   Fora da Caixa:%n%s   Dentro da Caixa:%n  %s", itemForaCx, itemDentroCx);
+    return String.format("     Fora da Caixa:%n%s     Dentro da Caixa:%n  %s", itemForaCx, itemDentroCx);
   }
 }
