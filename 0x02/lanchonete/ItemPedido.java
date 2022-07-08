@@ -1,9 +1,7 @@
 public class ItemPedido {
 
-  TipoItemPedido tipo;
-  String nome;
-
-  public ItemPedido() {}
+ private  TipoItemPedido tipo;
+ private  String nome;
 
   public ItemPedido(TipoItemPedido tipo, String nome) {
     this.tipo = tipo;
