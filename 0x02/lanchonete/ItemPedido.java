@@ -1,6 +1,7 @@
 public class ItemPedido {
-  public TipoItemPedido tipo;
-  public String nome;
+
+  private TipoItemPedido tipo;
+  private String nome;
 
   public ItemPedido() {}
 
