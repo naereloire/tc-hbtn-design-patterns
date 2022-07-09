@@ -1,7 +1,7 @@
 import java.util.Locale;
 
 public class Impressao {
-  private  int paginasTotais;
+  private int paginasTotais;
   private  int paginasColoridas;
   private final boolean ehFrenteVerso;
   TamanhoImpressao tamanhoImpressao;
