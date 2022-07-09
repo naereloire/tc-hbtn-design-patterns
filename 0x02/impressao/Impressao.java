@@ -1,6 +1,8 @@
+import java.util.Locale;
+
 public class Impressao {
-  private final int paginasTotais;
-  private final int paginasColoridas;
+  private  int paginasTotais;
+  private  int paginasColoridas;
   private final boolean ehFrenteVerso;
   TamanhoImpressao tamanhoImpressao;
   private double valorColoridasFrenteVerso;
@@ -113,14 +115,18 @@ public class Impressao {
 
   @Override
   public String toString() {
-    String frente = "frente";
+    String frente = "frente apenas";
     String frenteVerso = "frente e verso";
 
     String s = ehFrenteVerso ? frenteVerso : frente;
 
     return String.format(
+        Locale.GERMANY,
         "total de paginas: %d, total coloridas: %d, total preto e branco: %d, %s. total: R$ %.2f",
-        getPaginasTotais(), getPaginasColoridas(), getPaginasPb(), s, calcularTotal());
+        getPaginasTotais(),
+        getPaginasColoridas(),
+        getPaginasPb(),
+        s,
+        calcularTotal());
   }
-
 }
