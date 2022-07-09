@@ -1,8 +1,8 @@
 public class Impressao {
-  TamanhoImpressao tamanhoImpressao;
   private final int paginasTotais;
   private final int paginasColoridas;
   private final boolean ehFrenteVerso;
+  TamanhoImpressao tamanhoImpressao;
   private double valorColoridasFrenteVerso;
   private double valorPretoBrancoFrenteVerso;
   private double valorColoridasFrenteApenas;
@@ -16,26 +16,41 @@ public class Impressao {
     this.paginasTotais = paginasTotais;
     this.paginasColoridas = paginasColoridas;
     this.ehFrenteVerso = ehFrenteVerso;
+    this.tamanhoImpressao = tamanhoImpressao;
+  }
+
+  public int getPaginasTotais() {
+    return paginasTotais;
+  }
+
+  public int getPaginasColoridas() {
+    return paginasColoridas;
+  }
+
+  public int getPaginasPb() {
+    return getPaginasTotais() - getPaginasColoridas();
   }
 
   public double getTotalA2() {
+    double quantidadePb = getPaginasPb();
+    double quantidadeColorida = getPaginasColoridas();
+    double valorTotal;
     double valorTotalPb = 0;
     double valorTotalCor = 0;
-    double valorTotal;
 
     if (this.tamanhoImpressao == TamanhoImpressao.A2 && !ehFrenteVerso) {
       this.valorPretoBrancoFrenteApenas = 0.22;
       this.valorColoridasFrenteApenas = 0.32;
 
-      valorTotalPb = valorTotalPb * valorPretoBrancoFrenteApenas;
-      valorTotalCor = valorTotalCor * valorColoridasFrenteApenas;
+      valorTotalPb = quantidadePb * this.valorPretoBrancoFrenteApenas;
+      valorTotalCor = quantidadeColorida * this.valorColoridasFrenteApenas;
 
-    } else if (this.tamanhoImpressao == TamanhoImpressao.A2) {
+    } else if (this.tamanhoImpressao == TamanhoImpressao.A2 && ehFrenteVerso) {
       this.valorPretoBrancoFrenteVerso = 0.18;
       this.valorColoridasFrenteVerso = 0.28;
 
-      valorTotalPb = valorTotalPb * valorPretoBrancoFrenteVerso;
-      valorTotalCor = valorTotalCor * valorColoridasFrenteVerso;
+      valorTotalPb = quantidadePb * this.valorPretoBrancoFrenteVerso;
+      valorTotalCor = quantidadeColorida * this.valorColoridasFrenteVerso;
     }
 
     valorTotal = valorTotalPb + valorTotalCor;
@@ -43,45 +58,50 @@ public class Impressao {
   }
 
   public double getTotalA3() {
+    double quantidadePb = getPaginasPb();
+    double quantidadeColorida = getPaginasColoridas();
+    double valorTotal;
     double valorTotalPb = 0;
     double valorTotalCor = 0;
-    double valorTotal;
 
     if (this.tamanhoImpressao == TamanhoImpressao.A3 && !ehFrenteVerso) {
       this.valorPretoBrancoFrenteApenas = 0.20;
       this.valorColoridasFrenteApenas = 0.30;
 
-      valorTotalPb = valorTotalPb * valorPretoBrancoFrenteApenas;
-      valorTotalCor = valorTotalCor * valorColoridasFrenteApenas;
+      valorTotalPb = quantidadePb * this.valorPretoBrancoFrenteApenas;
+      valorTotalCor = quantidadeColorida * this.valorColoridasFrenteApenas;
 
     } else if (this.tamanhoImpressao == TamanhoImpressao.A3) {
       this.valorPretoBrancoFrenteVerso = 0.15;
       this.valorColoridasFrenteVerso = 0.25;
 
-      valorTotalPb = valorTotalPb * valorPretoBrancoFrenteVerso;
-      valorTotalCor = valorTotalCor * valorColoridasFrenteVerso;
+      valorTotalPb = quantidadePb * this.valorPretoBrancoFrenteVerso;
+      valorTotalCor = quantidadeColorida * this.valorColoridasFrenteVerso;
     }
     valorTotal = valorTotalPb + valorTotalCor;
     return valorTotal;
   }
 
   public double getTotalA4() {
+    double quantidadePb = getPaginasPb();
+    double quantidadeColorida = getPaginasColoridas();
+    double valorTotal;
     double valorTotalPb = 0;
     double valorTotalCor = 0;
-    double valorTotal;
+
     if (this.tamanhoImpressao == TamanhoImpressao.A4 && !ehFrenteVerso) {
       this.valorPretoBrancoFrenteApenas = 0.15;
       this.valorColoridasFrenteApenas = 0.25;
 
-      valorTotalPb = valorTotalPb * valorPretoBrancoFrenteApenas;
-      valorTotalCor = valorTotalCor * valorColoridasFrenteApenas;
+      valorTotalPb = quantidadePb * this.valorPretoBrancoFrenteApenas;
+      valorTotalCor = quantidadeColorida * this.valorColoridasFrenteApenas;
 
     } else if (this.tamanhoImpressao == TamanhoImpressao.A4) {
       this.valorPretoBrancoFrenteVerso = 0.10;
       this.valorColoridasFrenteVerso = 0.20;
 
-      valorTotalPb = valorTotalPb * valorPretoBrancoFrenteVerso;
-      valorTotalCor = valorTotalCor * valorColoridasFrenteVerso;
+      valorTotalPb = quantidadePb * this.valorPretoBrancoFrenteVerso;
+      valorTotalCor = quantidadeColorida * this.valorColoridasFrenteVerso;
     }
     valorTotal = valorTotalPb + valorTotalCor;
     return valorTotal;
@@ -103,15 +123,4 @@ public class Impressao {
         getPaginasTotais(), getPaginasColoridas(), getPaginasPb(), s, calcularTotal());
   }
 
-  public int getPaginasTotais() {
-    return paginasTotais;
-  }
-
-  public int getPaginasColoridas() {
-    return paginasColoridas;
-  }
-
-  public int getPaginasPb() {
-    return getPaginasTotais() - getPaginasColoridas();
-  }
 }
