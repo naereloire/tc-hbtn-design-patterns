@@ -16,7 +16,7 @@ public class MediaPlayerAdapter implements MediaPlayer {
   @Override
   public void reproduzir(TipoMedia tipoMedia, String fileName) {
     if (tipoMedia == TipoMedia.VLC) {
-      System.out.printf("Reproduzindo: %s: %s", tipoMedia.name(), fileName);
+      System.out.printf("Reproduzindo: %s%s", tipoMedia.name(), fileName);
     }
   }
 }
