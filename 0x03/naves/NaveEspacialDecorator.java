@@ -1,5 +1,5 @@
 public class NaveEspacialDecorator extends NaveEspacial {
-  private final NaveEspacial naveEspacial;
+  private NaveEspacial naveDecorada;
 
   public NaveEspacialDecorator(NaveEspacial naveEspacial) {
     super(naveEspacial.getSaude(), naveEspacial.getAtaque());
