@@ -11,3 +11,5 @@ K
 0x02/lanchonete/Pedido.java,b/a/bac38a691af63320cfc8d9d459a919abbffcdfe3
 L
 0x02/lanchonete/Program.java,e/9/e977366544e3b113b23019e593a0388b15d72a51
+M
+0x02/impressao/Impressao.java,1/5/1514c24b1c9e7f97e60f3c3f2d0eab516ff4cedd
